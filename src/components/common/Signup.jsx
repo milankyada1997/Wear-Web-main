@@ -10,9 +10,9 @@ export const Signup = () => {
 
   const submitHandler = async (data) => {
     if (data.role === "user") {
-      data.role_id = "67dbba350fe4c8c06d68e278";
+      data.role_id = "67c14d24571d971090e21d16";
     } else if (data.role === "seller") {
-      data.role_id = "67dbba450fe4c8c06d68e279";
+      data.role_id = "67bf35937927832fe3eca04f";
     }
     delete data.role;
     data.status = data.status === "true";

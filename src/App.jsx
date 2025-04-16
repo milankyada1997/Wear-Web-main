@@ -21,8 +21,6 @@ import ReviewPage from './components/layouts/ReviewPage'
 import ContactPage from './components/layouts/Contactpage'
 import MyOrderPage from './components/layouts/MyOrderPage'
 import OrderPage from './components/layouts/OrderPage'
-import Wishlist from './components/layouts/Wishlist'
-import ProductDetail from './components/layouts/ProductDetails'
 import ProductDetails from './components/layouts/ProductDetails'
 import { LandingPage } from './components/layouts/LandingPage'
 import ProductPurchasePage from './components/layouts/ProductPurchasePage'
@@ -34,6 +32,7 @@ import AdminDashboard from './components/admin/AdminDashboard'
 
 // ✅ Import Toaster
 import { Toaster } from 'react-hot-toast'
+import Cart from './components/layouts/Cart'
 
 function App() {
   
@@ -77,7 +76,7 @@ function App() {
           {/* <Route path='product' element={<ProductDetails/>}></Route> */}
           <Route path="product" element={<ProductDetails />} />
           <Route path="/user/product/purchase" element={<ProductPurchasePage/>} />  
-          <Route path='/user/wishlist' element={<Wishlist />}></Route>
+          <Route path='cart' element={<Cart />}></Route>
         </Route>
 
         <Route path='/seller' element={<SellerSidebar/>}>
