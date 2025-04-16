@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // <-- import useNavigate
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
     const userId = "67f8ba8635ea5e2f8508c441"; // Replace with dynamic user ID if needed
+    const navigate = useNavigate(); // <-- useNavigate hook
 
     useEffect(() => {
         const fetchCartItems = async () => {
@@ -37,6 +39,10 @@ const Cart = () => {
         }
     };
 
+    const handleBuyClick = (product) => {
+        navigate("/user/product/purchase", { state: { product } }); // <-- navigate to purchase page with product info
+    };
+
     return (
         <div style={styles.container}>
             <h2 style={styles.heading}>My Cart</h2>
@@ -54,7 +60,10 @@ const Cart = () => {
                             <h3>{item.product.name}</h3>
                             <p style={styles.price}>₹{item.product.price}</p>
                             <div style={styles.buttonGroup}>
-                                <button style={{ ...styles.button, backgroundColor: "#007bff" }}>
+                                <button
+                                    style={{ ...styles.button, backgroundColor: "#007bff" }}
+                                    onClick={() => handleBuyClick(item.product)} // <-- Buy Now action
+                                >
                                     Buy Now
                                 </button>
                                 <button
@@ -122,6 +131,5 @@ const styles = {
         fontWeight: "bold",
     },
 };
-
 
 export default Cart;

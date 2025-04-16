@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
   const [products, setProducts] = useState([]);
-  const [wishlist, setWishlist] = useState([]); // Add wishlist state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const ProductDetails = () => {
         });
 
         const result = await response.json();
-        if (response.ok) {
+        if (response.ok) { 
             alert("Product added to cart!");
         } else {
             alert(`Failed to add to cart: ${result.detail}`);
